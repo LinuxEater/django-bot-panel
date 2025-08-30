@@ -1,7 +1,7 @@
 import requests
 from time import sleep
 
-TOKEN = "7590694830:AAHo-R1lzf8QM_AZaHLZ8YtkwhJ6GZ7sbEs"
+TOKEN = "TOKEN"
 URL = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 
 # Faz a requisição para pegar mensagens novas
