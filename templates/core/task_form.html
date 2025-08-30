@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Bot Panel</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Teste: Este texto deve aparecer.</p>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_name">Nome do Bot:</label>
+            <input type="text" name="name" id="id_name" placeholder="Nome do bot" required>
+        </p>
+        <p>
+            <label for="id_url">URL do Site:</label>
+            <input type="url" name="url" id="id_url" placeholder="URL do site" required>
+        </p>
+        <p>
+            <label for="id_css_selector">Seletor CSS (opcional):</label>
+            <input type="text" name="css_selector" id="id_css_selector" placeholder="Seletor CSS (opcional)">
+        </p>
+        <p>
+            <label for="id_token">Token do Telegram:</label>
+            <input type="text" name="token" id="id_token" placeholder="Token do Telegram" required>
+        </p>
+        <p>
+            <label for="id_chat_id">Chat ID:</label>
+            <input type="text" name="chat_id" id="id_chat_id" placeholder="Chat ID" required>
+        </p>
+        <p>
+            <label for="id_schedule_time">Horário:</label>
+            <input type="time" name="schedule_time" id="id_schedule_time" placeholder="HH:MM" required>
+        </p>
+        <p>
+            <label for="id_active">Ativo:</label>
+            <input type="checkbox" name="active" id="id_active" checked>
+        </p>
+        <div>
+            <button type="submit">Salvar</button>
+            <a href="{% url 'dashboard' %}">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>
